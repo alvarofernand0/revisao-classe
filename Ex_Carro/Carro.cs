@@ -20,7 +20,11 @@ namespace Ex_Carro
         {
             Console.WriteLine($"A Velocidade atual é: {VelocidadeAtual}");
             Console.WriteLine($"Digite um número de 0 a 10 para aumentar a velocidade");
-            if(double.TryParse (Acelerar, out Acelerar (Console.ReadLine()));
+            double adicionar = 0;
+
+            if (!double.TryParse(Console.ReadLine(), out adicionar) || adicionar <= 0)
+                Console.WriteLine("Precisa ser um número maior que zero!");
+            VelocidadeAtual += adicionar;
             
         }
         public void Frear()
