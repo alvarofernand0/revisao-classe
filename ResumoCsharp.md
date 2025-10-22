@@ -105,11 +105,12 @@ class Program
 static void Main(string\[] args)
 {
 
-&nbsp;		bool usuarioJaCadastrado = false;
-			bool pagamentoRecebido = true;
-			var usuarioExpirado = false;
-		}
-	}
+ 		bool usuarioJaCadastrado = false;
+bool pagamentoRecebido = true;
+var usuarioExpirado = false;
+}
+}
+
 
 
 
@@ -408,13 +409,16 @@ Int32 idade = 25;  Tipo
 
    	outros exemplos:
 
-  &nbsp;			int x = 0;  atribuição
-    				
-    				x -= 5  é o mesmo que x = x + 5;
-    				
-    				x \\\*= 10 é o mesmo que x \\\* 10;
+   			int x = 0;  atribuição
 
-    				x /= 2 é o mesmo que x = x / 2;
+  &nbsp;   				x -= 5  é o mesmo que x = x + 5;
+      				
+      				x \\\\\\\*= 10 é o mesmo que x \\\\\\\* 10;
+
+      				x /= 2 é o mesmo que x = x / 2;
+
+    
+  
 
   
 
@@ -595,7 +599,7 @@ Int32 idade = 25;  Tipo
   * Condição;
   * Incremento;
 
-
+  
 
   #### Ex:
 
@@ -772,93 +776,195 @@ Int32 idade = 25;  Tipo
 
   
 
-  #### VALUE TYPES E REFERENCE TYPES:
+  #### 🧠 VALUE TYPES E REFERENCE TYPES 
+
+  #### 📦 Estrutura da memória;
 
   
 
-* A memória é dividida em duas partes: 'Heap' e 'Stack';
-* 'Heap' armazena os dados;
-* 'Stack' armazena as referências para os dados;
+  
 
-  ---
+  A memória é dividida em duas partes principais: Stack e Heap;
 
-* Qualquer tipo no .NET é tratado como:
+  
 
-  Tipo de Referência (Reference Type)
+  O Stack armazena variáveis locais, sejam elas valores diretos ou referências;
+
+  
+
+  O Heap armazena os objetos (dados de tipos de referência).
+
+  
+
+  #### ⚙️ Tipos em .NET
+
+  
+
+  Qualquer tipo no .NET é tratado como:
+
+  
+
   Tipo de Valor (Value Type)
 
-* Tipos de valor armazenam dados;
-* São armazenados em um local da memória chamado 'Stack'
+  
 
-  ---
-
-* Quando armazenamos um valor, a memória é alocada;
-* Este espaço armazena o dado criado;
-* Nossa variável acessa este dado diretamente;
-* Se assimilarmos uma variável do tipo de valor a outra
-
-  O valor será COPIADO
-  Ambas serão independentes
-
-* Built-in, structs, Enums;
-* 'Garbage Collector' não acessa o Stack;
+  Tipo de Referência (Reference Type)
 
   
 
-  #### Ex de Value Type ------------------------
+  #### 🔹 VALUE TYPES
+
+  
+
+  Armazenam o dado diretamente, não o endereço;
+
+  
+
+  Normalmente são guardados no Stack, mas podem viver no Heap se fizerem parte de um objeto;
+
+  
+
+  Quando você atribui uma variável de tipo de valor a outra, o valor é copiado —
+
+  ambas ficam independentes;
+
+  
+
+  O Garbage Collector não atua sobre o Stack;
+
+  
+
+  Exemplos: int, float, bool, char, struct, enum.
+
+  
+
+  #### 💻 Exemplo
 
   
 
   int x = 25;
-  int y = x;  // Y é uma cópia de x
-  Console.WriteLine(x);  // 25
-  Console.WriteLine(y);  // 25
-  x = 32;  // Somente x foi alterado
-  Console.WriteLine(x);  // 32
-  Console.WriteLine(y);  // 25
+
+  int y = x; // y recebe uma cópia de x
+
+  Console.WriteLine(x); // 25
+
+  Console.WriteLine(y); // 25
 
   
 
-  ---
+  x = 32; // Só x foi alterado
+
+  Console.WriteLine(x); // 32
+
+  Console.WriteLine(y); // 25
 
   
 
-  #### Reference Types ------------------
+  
+
+  🧠 Aqui, x e y vivem no Stack.
+
+  Cada um tem o seu próprio valor armazenado.
 
   
 
-* Armazenam o endereço do objeto que contém os dados;
-* Não armazena os dados em si;
-* São armazenados em um local da memória chamado de 'Heap';
-* Ao assimilar uma variável:
-
-  * Criará uma referência;
-  * Aponta para a mesma informação;
-  * Não são independentes;
-
-* Quando não mais utilizados são marcados para exclusão;
-* 'Garbage Collector' passa removendo todos eles;
-* Classes, Objects, Arrays...
+  #### 🔸 REFERENCE TYPES
 
   
 
-  #### Ex de Reference Type -----------------------------
+  Armazenam o endereço (referência) do objeto, não o dado em si;
+
+  
+
+  O objeto é criado e armazenado no Heap;
+
+  
+
+  Variáveis que apontam para esse objeto ficam no Stack e guardam apenas o endereço;
+
+  
+
+  Ao atribuir uma variável de referência a outra, ambas passam a apontar para o mesmo objeto;
+
+  
+
+  O Garbage Collector atua no Heap, removendo objetos que não possuem mais referências;
+
+  
+
+  Exemplos: class, object, string, array, delegate, interface.
+
+  
+
+  #### 💻 Exemplo
 
   
 
   var arr = new string\[2];
+
   arr\[0] = "Item 1";
+
   var arr2 = arr; // Não cria uma cópia
 
-  Console.WriteLine(arr\[0]);
-  Console.WriteLine(arr2\[0]);
+  Console.WriteLine(arr\[0]);  // Item 1
 
-  // Altera as duas listas
-  arr\[0] = "Item Alterado";
-  Console.WriteLine(arr\[0]);
-  Console.WriteLine(arr2\[0]);
+  Console.WriteLine(arr2\[0]); // Item 1
 
   
+
+  arr\[0] = "Item Alterado";
+
+  Console.WriteLine(arr\[0]);  // Item Alterado
+
+  Console.WriteLine(arr2\[0]); // Item Alterado
+
+  
+
+  
+
+  🧠 Aqui, arr e arr2 estão no Stack,
+
+  mas ambos apontam para o mesmo array que está no Heap.
+
+  
+
+  🧩 Comparativo rápido
+
+  Tipo	Onde o valor real fica	O que o Stack guarda	Exemplo
+
+  Value Type	Stack (ou dentro de um objeto no Heap)	O valor direto	int x = 10;
+
+  Reference Type	Heap	O endereço (referência)	Pessoa p = new Pessoa();
+
+  
+
+  #### 🧹 Garbage Collector
+
+  
+
+  Monitora o Heap;
+
+  
+
+  Remove automaticamente objetos sem referências ativas;
+
+  
+
+  O Stack é limpo automaticamente quando o método termina.
+
+  
+
+  
+
+  #### 💬 Resumo rápido pra decorar
+
+  
+
+  “Value Types guardam o valor em si.
+
+  Reference Types guardam o endereço do objeto.
+
+  O Stack é rápido e guarda as variáveis; o Heap é dinâmico e guarda os objetos.”
 
   
 
@@ -905,7 +1011,7 @@ Int32 idade = 25;  Tipo
   //Propriedades
   public int Id;
 
-  &nbsp;	//Métodos
+   	//Métodos
 
   }
 
@@ -918,11 +1024,12 @@ Int32 idade = 25;  Tipo
   public int Id;
   public float Price;
 
-  &nbsp;	public float PriceInDolar(float dolar)
-    		{
-    			return Price \\\* dolar;
-    		}
-    	
+   	public float PriceInDolar(float dolar)
+  {
+  return Price \\\* dolar;
+  }
+
+  
 
   }
 

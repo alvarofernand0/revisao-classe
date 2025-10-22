@@ -2,16 +2,10 @@
 using System.Security.Cryptography.X509Certificates;
 
 namespace Ex_Retangulo;
-public class Retangulo
+public class Retangulo(double largura, double altura)
 {
-    public double Largura { get; set; }
-    public double Altura { get; set; }
-
-    public Retangulo(double largura, double altura)
-    {
-        Largura = largura;
-        Altura = altura;
-    }
+    public double Largura { get; set; } = largura;
+    public double Altura { get; set; } = altura;
 
     public void CalcularArea()
     {
