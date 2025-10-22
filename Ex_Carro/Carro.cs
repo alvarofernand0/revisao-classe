@@ -18,7 +18,7 @@ namespace Ex_Carro
         }
         public void Acelerar()
         {
-            Console.WriteLine($"A Velocidade atual é: {VelocidadeAtual}");
+            Console.WriteLine($"\nA Velocidade atual é: {VelocidadeAtual}\n");
             Console.WriteLine($"Digite um número de 0 a 10 para aumentar a velocidade");
             double adicionar = 0;
 
@@ -35,7 +35,7 @@ namespace Ex_Carro
 
         public void ExibirStatus()
         {
-            Console.WriteLine($"Veiculo de Marca: {Marca}, Modelo: {Modelo}, Ano: {Ano}, Com Velocidade Atual: {VelocidadeAtual}");
+            Console.WriteLine($"\nVeiculo de Marca: {Marca}, Modelo: {Modelo}, Ano: {Ano}, Com Velocidade Atual: {VelocidadeAtual}km/h");
             
         }
     }

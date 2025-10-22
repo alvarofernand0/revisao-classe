@@ -11,12 +11,12 @@ class Program
         Console.Write("\n\nDigite o Modelo: ");
         string modelo = Console.ReadLine();
 
+        Console.Write("\n\nDigite o ano: ");
         if (!int.TryParse(Console.ReadLine(), out int ano) || ano <= 0)
             Console.WriteLine("Precisa ser um numero inteiro positivo!");
         
-
-        
         Carro carro = new Carro(marca, modelo, ano );
         carro.Acelerar();
+        carro.ExibirStatus();
     }
 }
