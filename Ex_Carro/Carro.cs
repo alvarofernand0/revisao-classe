@@ -18,24 +18,28 @@ namespace Ex_Carro
         }
         public void Acelerar()
         {
-            Console.WriteLine($"\nA Velocidade atual é: {VelocidadeAtual}\n");
-            Console.WriteLine($"Digite um número de 0 a 10 para aumentar a velocidade");
+            Console.WriteLine($"\nA Velocidade atual é: {VelocidadeAtual}km/h\n");
+            Console.Write($"Digite um número maior que 0 para aumentar a velocidade: ");
             double adicionar = 0;
 
             if (!double.TryParse(Console.ReadLine(), out adicionar) || adicionar <= 0)
-                Console.WriteLine("Precisa ser um número maior que zero!");
+                Console.WriteLine("\n\nPrecisa ser um número maior que zero!");
             VelocidadeAtual += adicionar;
-            
         }
         public void Frear()
         {
-            --VelocidadeAtual;
-            Console.WriteLine($"A Velocidade atual é: {VelocidadeAtual}");
+            Console.WriteLine($"A Velocidade atual é: {VelocidadeAtual}km/h\n");
+            Console.Write($"\nDigite um número maior que zero para diminuir a velocidade: ");
+            double diminuir = 0;
+
+            if (!double.TryParse(Console.ReadLine(), out diminuir) || diminuir <= 0)
+                Console.WriteLine("Precisa ser um número Maior que zero!");
+            VelocidadeAtual -= diminuir;
         }
 
         public void ExibirStatus()
         {
-            Console.WriteLine($"\nVeiculo de Marca: {Marca}, Modelo: {Modelo}, Ano: {Ano}, Com Velocidade Atual: {VelocidadeAtual}km/h");
+            Console.WriteLine($"\nVeiculo de Marca: {Marca}, Modelo: {Modelo}, Ano: {Ano}, Com Velocidade Atual: {VelocidadeAtual}km/h\n");
             
         }
     }
